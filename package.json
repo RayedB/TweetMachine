@@ -1,0 +1,26 @@
+{
+  "name": "tweetmachine",
+  "version": "1.0.0",
+  "description": "A twitter live stream app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RayedB/TweetMachine.git"
+  },
+  "author": "Rayed Benbrahim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RayedB/TweetMachine/issues"
+  },
+  "homepage": "https://github.com/RayedB/TweetMachine#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "mongoose": "^4.7.8",
+    "socket.io": "^1.7.2",
+    "twit": "^2.2.5"
+  }
+}

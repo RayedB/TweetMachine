@@ -1,0 +1,20 @@
+{
+  "name": "tweetmachine",
+  "description": "A twitter live stream app",
+  "main": "server.js",
+  "authors": [
+    "Rayed Benbrahim"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/RayedB/TweetMachine",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-socket-io": "^0.7.0"
+  }
+}
