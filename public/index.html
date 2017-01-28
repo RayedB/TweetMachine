@@ -145,15 +145,5 @@
       </div>
     </div>
   </div>
-  
-  <script>
-  $( document ).ready(function() {
-    var socket = io.connect('http://localhost:3000');
-    socket.on('tweet',function(tweet){
-      $('#tweets').append('<div class="social-feed-box><div class="social-body"><p>'+tweet.body+'</p></div></div>');
-      //$scope.posts.push(tweet);
-    })
-    });
-  </script>
   </body>
   </html>

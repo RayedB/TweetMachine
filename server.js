@@ -60,10 +60,10 @@ http.listen(3000, function(){
 * Connecting to twitter
 */
 var api = new twit({
-  consumer_key: '',
-  consumer_secret: '',
-  access_token: '',
-  access_token_secret: ''
+  consumer_key: 'hTvnBjyH0jlzT8pbRJavuxkOZ',
+  consumer_secret: 'qMf4XP3tBfDJyhrGAbtnzu6cANJB9vmOMZimezFAcrDxTMlR1Y',
+  access_token: '245497941-9qQZD0MCxjspk9gJ258v0CX3lhTCdjXM6XBiZXLt',
+  access_token_secret: 'Z42Nt4ceLlQ6LeDhp76WWDFN4Nyozlz4d5LC8V6qkiKJs'
 });
 
 /*
