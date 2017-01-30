@@ -12,6 +12,7 @@ module.exports = function(stream, io){
       body: stream['text'],
       date: stream['created_at'],
       screenname: stream['user']['screen_name'],
+      language: stream['lang'],
       retweet: stream['retweet_count'],
       favorite: stream['favorite_count']
     };

@@ -9,6 +9,7 @@ var tweet = new mongoose.Schema({
 	body		:String,
 	date		:Date,
 	screenname 	:String,
+	language	:String,
 	retweet 	:Number,
 	favorite	:Number
 	

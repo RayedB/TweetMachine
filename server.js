@@ -11,8 +11,8 @@ var Tweet = require('./models/tweets');
 * Connection to DB
 * Setting a 30sec connection timeout as recommended by MLabs
 */
-var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
-                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };       
+var options = { server: { socketOptions: { keepAlive: 900000, connectTimeoutMS: 90000 } }, 
+                replset: { socketOptions: { keepAlive: 900000, connectTimeoutMS : 90000 } } };       
 
 var mongodbUri = 'mongodb://tweetmachine:rayed@ds056419.mlab.com:56419/ekitweets';
 
@@ -40,8 +40,9 @@ app.get('/data', function(req,res){
 
 // Delete route
 app.delete('/:id/delete', function(req,res){
-  var tweetToDelete = req.params.twid;
-  Tweet.findOneAndRemove(tweetToDelete, function(err){
+  var tweetToDelete = req.params.id;
+  console.log(tweetToDelete);
+  Tweet.findByIdAndRemove(tweetToDelete, function(err){
     if (err) {return (err);}
     console.log('tweet deleted');
     res.end();
@@ -60,10 +61,10 @@ http.listen(3000, function(){
 * Connecting to twitter
 */
 var api = new twit({
-  consumer_key: 'hTvnBjyH0jlzT8pbRJavuxkOZ',
-  consumer_secret: 'qMf4XP3tBfDJyhrGAbtnzu6cANJB9vmOMZimezFAcrDxTMlR1Y',
-  access_token: '245497941-9qQZD0MCxjspk9gJ258v0CX3lhTCdjXM6XBiZXLt',
-  access_token_secret: 'Z42Nt4ceLlQ6LeDhp76WWDFN4Nyozlz4d5LC8V6qkiKJs'
+  consumer_key: '',
+  consumer_secret: '',
+  access_token: '',
+  access_token_secret: ''
 });
 
 /*
@@ -71,7 +72,7 @@ var api = new twit({
 */
 io.sockets.on('connection', function (socket) {
  //                                                   v CHANGE BELOW FOR ANOTHER KEYWORD TO TRACK
- var stream = api.stream('statuses/filter', { track: "superbowl" })
+ var stream = api.stream('statuses/filter', { track: "L'Oreal" })
 
   stream.on('tweet', function (tweet) {
     //console.log(tweet);
