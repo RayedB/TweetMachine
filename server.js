@@ -72,10 +72,9 @@ var api = new twit({
 */
 io.sockets.on('connection', function (socket) {
  //                                                   v CHANGE BELOW FOR ANOTHER KEYWORD TO TRACK
- var stream = api.stream('statuses/filter', { track: "L'Oreal" })
+ var stream = api.stream('statuses/filter', { track: "Superbowl" })
 
   stream.on('tweet', function (tweet) {
-    //console.log(tweet);
     streamHandler(tweet,io);
 
   });

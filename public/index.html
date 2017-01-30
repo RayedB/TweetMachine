@@ -10,7 +10,6 @@
   <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="css/animate.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <link href="bower_components/morris.js/morris.css" rel="stylesheet">
 
   <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -18,10 +17,10 @@
   crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-  <script src="bower_components/morris.js/morris.js"></script>
-  <script src="bower_components/ng-morris-js/dist/ng-morris-js.min.js"></script>
-  <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-morris/1.3.0/angular-morris.min.js"></script>
   <script src="socket.js"></script>
   <script src="app.js"></script>
 
@@ -69,7 +68,6 @@
               <p>
                 {{post.body}} <br>
                 <strong>{{post.language}}</strong><br>
-                <p> {{post._id}} </p>
               </p>
               <div class="btn-group">
                 <button class="btn btn-white btn-xs"><i class="fa fa-retweet"></i> {{post.retweet}}</button>
@@ -87,13 +85,13 @@
             <div class="ibox-content">
               <h3>Number of tweets</h3>
               <div class="ibox-content">
-                <ng-morris-bar-chart chart-options="myBarChart.options" chart-data="myBarChart.data"> </ng-morris-bar-chart>
+                <div bar-chart bar-data="counter" bar-x='{{xaxis}}' bar-y='yaxis' bar-labels='["Minutes", "Tweets"]' bar-colors='["#31C0BE", "#c7254e"]' bar-hide-hover="'always'">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </body>
-  </html>
+</html>
