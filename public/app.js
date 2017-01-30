@@ -22,6 +22,7 @@ app.controller('MainCtrl',['$scope','$http','socketio',function($scope,$http,soc
   	var tweetCounter = 0;
   	var lapseCounter = 0;
   	$scope.counter = [];
+    $scope.lang = [];
     $scope.xaxis = '1 minute';
     $scope.yaxis = '["tweets"]';
 

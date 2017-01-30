@@ -41,7 +41,6 @@ app.get('/data', function(req,res){
 // Delete route
 app.delete('/:id/delete', function(req,res){
   var tweetToDelete = req.params.id;
-  console.log(tweetToDelete);
   Tweet.findByIdAndRemove(tweetToDelete, function(err){
     if (err) {return (err);}
     console.log('tweet deleted');
@@ -72,7 +71,7 @@ var api = new twit({
 */
 io.sockets.on('connection', function (socket) {
  //                                                   v CHANGE BELOW FOR ANOTHER KEYWORD TO TRACK
- var stream = api.stream('statuses/filter', { track: "Superbowl" })
+ var stream = api.stream('statuses/filter', { track: "L'Oréal" })
 
   stream.on('tweet', function (tweet) {
     streamHandler(tweet,io);
