@@ -18,7 +18,7 @@ var mongodbUri = 'mongodb://tweetmachine:rayed@ds056419.mlab.com:56419/ekitweets
 
 mongoose.connect(mongodbUri, options);
 var conn = mongoose.connection;             
- 
+
 conn.on('error', console.error.bind(console, 'connection error:'));  
  
 conn.once('open', function() {
@@ -60,10 +60,10 @@ http.listen(3000, function(){
 * Connecting to twitter
 */
 var api = new twit({
-  consumer_key: '',
-  consumer_secret: '',
-  access_token: '',
-  access_token_secret: ''
+  consumer_key: '*',
+  consumer_secret: '*',
+  access_token: '*',
+  access_token_secret: '*'
 });
 
 /*
@@ -71,7 +71,7 @@ var api = new twit({
 */
 io.sockets.on('connection', function (socket) {
  //                                                   v CHANGE BELOW FOR ANOTHER KEYWORD TO TRACK
- var stream = api.stream('statuses/filter', { track: "L'Oréal" })
+ var stream = api.stream('statuses/filter', { track: "Fillon" })
 
   stream.on('tweet', function (tweet) {
     streamHandler(tweet,io);
